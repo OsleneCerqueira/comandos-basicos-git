@@ -158,6 +158,75 @@ Esse comando Git integra as mudanças de dois branches diferentes em um único b
 
 $ git merge <nome_do_branch>
 
+# Comandos Git avançados
+
+
+## git rebase
+Git rebase a princípio parece fazer o mesmo que um comando git merge: ele integra dois branches em um branch único. Porém, esse comando refaz o histórico de commits, tornando-o linear. É o mais indicado para consolidar múltiplos branches.
+
+####Exemplo:
+
+$ git rebase <base>
+
+## git pull –rebase
+Essa é uma variação do comando pull mostrado anteriormente. A partir dessa instrução, o Git irá fazer um rebase (não um merge) depois de se utilizar um comando pull.
+
+Exemplo:
+
+$ git pull –rebase
+
+## git cherry-pick
+Esse é um comando poderoso que permite selecionar qualquer commit específico de um brach e aplicá-lo a outro branch, sem precisar de uma mescla completa. A operação fica adicionada no histórico.
+
+Exemplo:
+
+$ git cherry-pick <commit-hash>
+
+## git archive
+
+
+Esse comando Git combina múltiplos arquivos em um único arquivo, como se fosse um arquivo zipado. Esse pacote pode ser aberto depois e os arquivos contidos podem ser extraídos individualmente.
+
+####Exemplo:
+
+$ git archive –format zip HEAD > archive-HEAD.zip
+
+## git blame
+O comando “dedo-duro”, blame ajuda a determinar qual usuário realizou qual mudança em um determinado arquivo.
+
+####Exemplo:
+
+$ git blame <nome_do_arquivo>
+
+## git tag
+Tags são uma boa opção para marcar uma branch e evitar alteração, principalmente em releases públicos.
+
+####Exemplo:
+
+$ git tag -a v1.0.0
+
+## git diff
+Para comparar dois arquivos gits ou dois branches antes de passarem por um commit ou um push, é importante executar esse comando Git.
+
+####Exemplos:
+
+comparando o repositório ativo com o repositório local: $ git diff HEAD <nome_do_arquivo>
+comparando duas ramificações: $ git diff <branch de origem> <branch de destino>
+24. git citool
+Esse comando Git oferece uma alternativa gráfica ao commit.
+
+Exemplo:
+
+$ git citool
+
+## git whatchanged
+Esse comando oferece informações de log, mas em formato raw.
+
+####Exemplo:
+
+$ git whatchanged
+
+
 
 
 ####[Arquivo fonte](https://www.codigofonte.com.br/artigos/top-25-comandos-do-git)
